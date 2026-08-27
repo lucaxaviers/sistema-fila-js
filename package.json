@@ -1,11 +1,12 @@
 {
-  "name": "jorge",
+  "name": "sistema-fila-js",
   "version": "1.0.0",
-  "description": "",
-  "main": "indes.js",
+  "description": "Implementação e simulação da estrutura de dados Fila (FIFO) em JavaScript",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Lucas Xavier",
+  "license": "MIT"
 }
