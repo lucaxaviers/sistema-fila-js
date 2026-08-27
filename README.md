@@ -1,46 +1,37 @@
-# 🚶 Sistema de Fila em JavaScript (Queue / FIFO)
+<div align="center">
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-[![Data Structure](https://img.shields.io/badge/Estrutura-Fila%20(FIFO)-blue?style=for-the-badge)](https://developer.mozilla.org/)
-[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
+# 🚶 Sistema de Fila em JavaScript (FIFO / Queue)
 
-Implementação modular da estrutura de dados fundamental **Fila (Queue)** em **JavaScript ES6+**, baseada no princípio **FIFO (First In, First Out)** para gerenciamento e simulação de filas de atendimento.
+<p align="center">
+  <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Estrutura-Fila%20FIFO-blue?style=for-the-badge" alt="Fila" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+</p>
 
----
-
-## ⚙️ Métodos Implementados
-
-O módulo `index.js` exporta as operações essenciais de manipulação de fila:
-
-| Função | Parâmetros | Descrição |
-|---|---|---|
-| `criarFila(tamanho)` | `tamanho` (padrão: 2) | Instancia uma nova fila com capacidade estática predefinida. |
-| `colocarNaFila(fila, item)` | `fila`, `item` | Insere um novo elemento no final da fila (**Enqueue**). Avisa caso a capacidade esteja esgotada (*overflow*). |
-| `retirarDaFila(fila)` | `fila` | Remove e retorna o elemento da frente da fila (**Dequeue**), deslocando os itens subsequentes para as posições anteriores. |
-| `limparFila(fila)` | `fila` | Reseta todas as posições da fila, limpando seu conteúdo. |
+<p align="center">
+  Implementação modular da estrutura de dados fundamental Fila (First In, First Out) em JavaScript ES6+ para simulação de atendimentos.
+</p>
 
 ---
 
-## 💻 Exemplo de Uso
+</div>
 
-```javascript
-import { criarFila, colocarNaFila, retirarDaFila, limparFila } from './index.js';
+## ⚙️ Métodos da Fila
 
-// 1. Cria uma fila com capacidade para 3 pessoas
-const filaAtendimento = criarFila(3);
-
-// 2. Insere clientes na fila
-colocarNaFila(filaAtendimento, "Carlos");
-colocarNaFila(filaAtendimento, "Mariana");
-colocarNaFila(filaAtendimento, "João");
-
-// 3. Atende o primeiro da fila (Carlos)
-const atendido = retirarDaFila(filaAtendimento);
-console.log(`Cliente atendido: ${atendido}`);
-
-// 4. Limpa a fila
-limparFila(filaAtendimento);
+```mermaid
+flowchart LR
+    A[Novo Item] -->|colocarNaFila| B[Fim da Fila]
+    B --> C[Slot 2]
+    C --> D[Slot 1]
+    D -->|retirarDaFila| E[Elemento Atendido]
 ```
+
+| Função | Assinatura | Comportamento |
+|---|---|---|
+| **Criar Fila** | `criarFila(tamanho)` | Cria um array com capacidade estática predefinida |
+| **Enfileirar** | `colocarNaFila(fila, item)` | Insere no próximo slot livre ou emite aviso de fila cheia |
+| **Desenfileirar** | `retirarDaFila(fila)` | Remove o primeiro item, desloca os restantes e o retorna |
+| **Limpar** | `limparFila(fila)` | Reseta todos os slots da fila para vazio |
 
 ---
 
@@ -53,11 +44,12 @@ git clone https://github.com/lucaxaviers/sistema-fila-js.git
 # Acessar a pasta
 cd sistema-fila-js
 
-# Executar com Node.js
+# Executar
 node index.js
 ```
 
 ---
 
-> **Desenvolvido por Lucas Rodrigues Xavier**  
-> *Projeto acadêmico com foco em estruturas de dados e algoritmos fundamentais.*
+<div align="center">
+  <sub>Desenvolvido no contexto de Engenharia de Software</sub>
+</div>
